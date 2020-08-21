@@ -17,3 +17,14 @@ class Post(models.Model):
         verbose_name_plural = 'posts'
         db_table = 'blog_posts'
         ordering = ('-modify_dt',)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return ''
+
+    def get_previous(self):
+        return self.get_previous_by_modify_dt()
+    def get_next(self):
+        return self.get_next_by_modify_dt()
