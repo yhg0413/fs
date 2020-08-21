@@ -26,7 +26,7 @@ SECRET_KEY = '8=-0l7sj17gttf3sp*xm=pj8vh0%c9w7ive*+g!v)qui$u$9vn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.15','127.0.0.1','localhost']
 
 
 # Application definition
@@ -57,7 +57,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_ex_db', # 데이터베이스 명
+        'NAME': 'DB_jang_go', # 데이터베이스 명
         'HOST': 'localhost', # 서버 IP
         'PORT': '3306', # 포트번호
         'USER': 'webuser', # 사용자 ID

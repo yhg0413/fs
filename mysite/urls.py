@@ -20,13 +20,12 @@ from django.urls import path, include
 from mysite.views import HomeView, UserCreateView, UserCreateDoneTV
 
 urlpatterns = [
-                  path('', HomeView.as_view(), name='home'),
-                  path('admin/', admin.site.urls),
-                  # 로그인, 로그아웃, 비밀번호 변경 등 담당
-                  path('accounts/', include('django.contrib.auth.urls')),
-                  # 회원 가입 및 처리
-                  path('accounts/register/', UserCreateView.as_view(), name='register'),
-                  path('accounts/register/done/', UserCreateDoneTV.as_view(),
-                       name='register_done'),
-
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('blog/', include('blog.urls')),
+    path('', HomeView.as_view(), name='home'),
+    path('admin/', admin.site.urls),
+    # 로그인, 로그아웃, 비밀번호 변경 등 담당
+    path('accounts/', include('django.contrib.auth.urls')),
+    # 회원 가입 및 처리
+    path('accounts/register/', UserCreateView.as_view(), name='register'),
+    path('accounts/register/done/', UserCreateDoneTV.as_view(),name='register_done'),
+]
