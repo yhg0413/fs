@@ -7,7 +7,7 @@ class PostLV(ListView):
     model = Post
     template_name = "blog/post_all.html"
     context_object_name = 'posts'
-    paginate_by = 10
+    paginate_by = 2
 
 
 class PostDV(DetailView):
